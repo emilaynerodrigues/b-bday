@@ -132,7 +132,7 @@
   transform: rotate(290deg);
 }
 
-.flower-stalk {
+/* .flower-stalk {
   position: absolute;
   top: -6.5rem;
   right: -0.4rem;
@@ -153,7 +153,7 @@
   border: 2.5px solid #000000;
   background-color: rgba(0, 60, 255, 0.74);
   border-radius: 2px 2px 20px 20px;
-}
+} */
 
 .human {
   position: absolute;
