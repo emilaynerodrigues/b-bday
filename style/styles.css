@@ -1,0 +1,332 @@
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Righteous", cursive;
+  letter-spacing: 0.09rem;
+  color: #d6c9c9;
+}
+
+.container {
+  height: 100vh;
+  /* width: 100vw; */
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    180deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgb(7, 35, 53) 70%,
+    rgb(10, 39, 54) 83%,
+    rgb(14, 32, 44) 100%
+  );
+}
+
+/* universe starts */
+.star {
+  width: 1rem;
+  position: absolute;
+  animation: blink 3s ease-in infinite;
+}
+
+@keyframes blink {
+  0% {
+    transform: scale(0.3);
+  }
+  50% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.3);
+  }
+}
+
+.star-small {
+  width: 0.5rem;
+}
+
+.star-big {
+  width: 0.7rem;
+}
+
+.star-small:nth-child(1) {
+  top: 5%;
+  left: 33%;
+}
+
+.star-small:nth-child(2) {
+  top: 36%;
+  left: 70%;
+}
+
+.star-small:nth-child(3) {
+  top: 30%;
+  left: 15%;
+}
+
+.star-small:nth-child(4) {
+  top: 20%;
+  right: 10%;
+}
+
+.star-small:nth-child(5) {
+  top: 11%;
+  right: 35%;
+}
+
+.star-small:nth-child(6) {
+  bottom: 2%;
+  left: 10%;
+}
+
+.star-small:nth-child(7) {
+  top: 56%;
+  right: 3%;
+}
+
+.star-small:nth-child(8) {
+  bottom: 5%;
+  left: 55%;
+}
+
+.star-small:nth-child(9) {
+  bottom: 20%;
+  left: 25%;
+}
+
+.star-small:nth-child(10) {
+  bottom: -2%;
+  right: 18%;
+}
+
+.star-big:nth-child(11) {
+  top: 25%;
+  left: 55%;
+}
+
+.star-big:nth-child(12) {
+  top: 5%;
+  right: 15%;
+}
+
+.star-big:nth-child(13) {
+  top: 33%;
+  left: 35%;
+}
+
+.star-big:nth-child(14) {
+  top: 33%;
+  left: 35%;
+}
+
+.star-big:nth-child(15) {
+  top: 30%;
+  right: 15%;
+}
+
+.star-big:nth-child(16) {
+  bottom: 22%;
+  right: 15%;
+}
+
+.star-big:nth-child(16) {
+  bottom: 22%;
+  right: 15%;
+}
+
+.star-big:nth-child(17) {
+  bottom: 10%;
+  right: 25%;
+}
+
+.star-big:nth-child(17) {
+  bottom: -3%;
+  left: 35%;
+}
+
+.star-big:nth-child(18) {
+  bottom: 10%;
+  right: 25%;
+}
+
+.star-big:nth-child(19) {
+  bottom: 15%;
+  left: 15%;
+}
+
+.star-big:nth-child(20) {
+  bottom: 6%;
+  left: 25%;
+}
+
+.star-big:nth-child(21) {
+  bottom: 16%;
+  right: 35%;
+}
+
+.star-big:nth-child(22) {
+  bottom: 5%;
+  right: 10%;
+}
+
+.star-big:nth-child(23) {
+  bottom: 25%;
+  left: 3%;
+}
+
+.star-small:nth-child(24) {
+  bottom: 50%;
+  left: 2%;
+}
+
+.star-big:nth-child(25) {
+  bottom: 30%;
+  right: 3%;
+}
+
+.star-big:nth-child(26) {
+  top: 10%;
+  left: 3%;
+}
+
+.star-small:nth-child(27) {
+  bottom: 13%;
+  left: 45%;
+}
+
+.star-small:nth-child(28) {
+  top: 13%;
+  left: 45%;
+}
+
+.star-small:nth-child(29) {
+  top: 20%;
+  right: 25%;
+}
+
+.star-small:nth-child(30) {
+  top: 37%;
+  left: 4%;
+}
+
+.moon {
+  position: absolute;
+  top: -5%;
+  animation: leftRight 8s linear infinite;
+}
+
+@keyframes leftRight {
+  0% {
+    right: 60%;
+    transform: rotate(0);
+  }
+
+  50% {
+    right: 50%;
+    transform: rotate(10deg);
+    top: -15%;
+  }
+  100% {
+    right: 60%;
+    transform: rotate(0);
+  }
+}
+
+.moon img {
+  width: 40rem;
+}
+
+/* universe ends */
+
+/* countdown starts */
+.countdown {
+  width: 35rem;
+  height: 15rem;
+  background-color: #dbdbdb15;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.tag {
+  /* margin-top: 1.5rem; */
+  font-size: 1.5rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.age {
+  margin-top: 1.5rem;
+}
+
+.countdown-content {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.day,
+.hour,
+.minute,
+.second {
+  background-color: #d6c9c9;
+  width: 7rem;
+  border-radius: 0.25rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+  color: #333;
+  margin-top: 1.5rem;
+}
+
+.tag-countdown {
+  margin-top: 0.7rem;
+  font-size: .8rem;
+  text-align: center;
+  text-transform: uppercase;
+}
+/* countdown ends */
+
+@media screen and (max-width: 400px) {
+  .moon {
+    top: -2%;
+    right: 50%;
+  }
+  @keyframes leftRight {
+    0% {
+      right: 52%;
+      transform: rotate(0);
+    }
+
+    50% {
+      right: 48%;
+      transform: rotate(20deg);
+      top: -15%;
+    }
+    100% {
+      right: 52%;
+      transform: rotate(0);
+    }
+  }
+  .countdown {
+    width: 21rem;
+    height: 17rem;
+    transform: translate(-50%, -33%);
+  }
+  .day,
+  .hour,
+  .minute,
+  .second {
+    width: 4.5rem;
+  }
+
+  .tag-countdown {
+    font-size: 0.7rem;
+  }
+}

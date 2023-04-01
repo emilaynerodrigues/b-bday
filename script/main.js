@@ -1,7 +1,7 @@
-const secondsContainer = document.querySelector("#seconds");
-const minutesContainer = document.querySelector("#minutes");
-const hoursContainer = document.querySelector("#hours");
-const daysContainer = document.querySelector("#days");
+const secondsContainer = document.querySelector("#second");
+const minutesContainer = document.querySelector("#minute");
+const hoursContainer = document.querySelector("#hour");
+const daysContainer = document.querySelector("#day");
 
 // const nextYear = new Date().getFullYear() + 1; // recebendo a data do proximo ano dde forma dinamica;
 const nextBday = new Date().getFullYear();
@@ -22,7 +22,6 @@ const updateCountdown = () => {
   minutesContainer.textContent = minutes < 10 ? "0" + minutes : minutes;
   hoursContainer.textContent = hours < 10 ? "0" + hours : hours;
   daysContainer.textContent = days < 10 ? "0" + days : days;
-
 };
 
 setInterval(updateCountdown, 1000);
