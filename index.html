@@ -374,12 +374,12 @@
               />
             </svg>
           </div>
-          <div class="moon">
+          <div id="moon" class="moon">
             <img src="./img/earth-and-moon-animate.svg" alt="" />
           </div>
         </div>
 
-        <div class="countdown">
+        <div id="countdown" class="countdown">
           <div class="tag">Contagem regressiva</div>
           <div class="countdown-content">
             <div class="days">
@@ -399,7 +399,22 @@
               <div class="tag-countdown">segundos</div>
             </div>
           </div>
-          <div class="tag age"><span>18</span> anos</div>
+          <div class="tag age"><span id="age"></span></div>
+        </div>
+
+        <div id="congrats" class="congrats">
+          <div class="tag">Chegou o dia!</div>
+          <p>Advinhe o botão e tenha uma surpresa</p>
+          <div class="btn-container">
+            <button class="btn" onclick="btnPress()"></button>
+            <button class="btn" onclick="btnPress()"></button>
+            <button class="btn" onclick="blueBtnPress()"></button>
+            <button class="btn" onclick="btnPress()"></button>
+          </div>
+        </div>
+
+        <div id="rocket" class="rocket">
+          <img src="./img/Frame 3.svg" alt="" />
         </div>
       </div>
     </div>

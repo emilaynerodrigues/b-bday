@@ -1,27 +1,86 @@
-const secondsContainer = document.querySelector("#second");
-const minutesContainer = document.querySelector("#minute");
-const hoursContainer = document.querySelector("#hour");
-const daysContainer = document.querySelector("#day");
+var secondsContainer = document.querySelector("#second");
+var minutesContainer = document.querySelector("#minute");
+var hoursContainer = document.querySelector("#hour");
+var daysContainer = document.querySelector("#day");
+var ageContainer = document.querySelector("#age");
+var countdownContainer = document.querySelector("#countdown");
+var congratsContainer = document.querySelector("#congrats");
 
-// const nextYear = new Date().getFullYear() + 1; // recebendo a data do proximo ano dde forma dinamica;
-const nextBday = new Date().getFullYear();
-const bDayDate = new Date(`April 25 ${nextBday} 00:00:00`); //data do aniversario
+function countdown() {
+  // Define a data de destino (25 de abril)
+  var birthdayDate = new Date(
+    "April 2, " + new Date().getFullYear() + " 00:00:00"
+  ).getTime();
 
-const updateCountdown = () => {
-  const currentTime = new Date();
-  const difference = bDayDate - currentTime; //milisegundos que faltam pra 25 de abril
+  // Atualiza a contagem regressiva a cada segundo
+  var interval = setInterval(function () {
+    // Obtém a data e hora atuais
+    var currentDate = new Date().getTime();
 
-  const days = Math.floor(difference / 1000 / 60 / 60 / 24); // dias que faltam para o dia 25 de abril
-  const hours = Math.floor(difference / 1000 / 60 / 60) % 24; // horas que faltam para o dia 25 de abril
-  const minutes = Math.floor(difference / 1000 / 60) % 60; // minutos que faltam para o dia 25 de abril
-  const seconds = Math.floor(difference / 1000) % 60; // segundos que faltam para o dia 25 de abril
+    // Calcula a diferença entre a data atual e a data de destino
+    var difference = birthdayDate - currentDate;
 
-  //   console.log({days, hours, minutes, seconds}); //milisegundos que faltam pra 25 de abril
+    // Calcula dias, horas, minutos e segundos restantes
+    var days = Math.floor(difference / (1000 * 60 * 60 * 24));
+    var hours = Math.floor(
+      (difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+    );
+    var minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-  secondsContainer.textContent = seconds < 10 ? "0" + seconds : seconds; //se segundos for menor que 10 a função deve acrescentar o 0 na frente, senão continua normal
-  minutesContainer.textContent = minutes < 10 ? "0" + minutes : minutes;
-  hoursContainer.textContent = hours < 10 ? "0" + hours : hours;
-  daysContainer.textContent = days < 10 ? "0" + days : days;
+    // Exibe a contagem regressiva na página
+    secondsContainer.textContent = seconds < 10 ? "0" + seconds : seconds; //se segundos for menor que 10 a função deve acrescentar o 0 na frente, senão continua normal
+    minutesContainer.textContent = minutes < 10 ? "0" + minutes : minutes;
+    hoursContainer.textContent = hours < 10 ? "0" + hours : hours;
+    daysContainer.textContent = days < 10 ? "0" + days : days;
+
+    // Verifica se a data atual é 25 de abril
+    var currentDate = new Date();
+    if (currentDate.getMonth() == 3 && currentDate.getDate() == 2) {
+      // Se for 25 de abril, esconde o countdown e exibe a mensagem + botões
+      countdownContainer.classList.add("hidden");
+      document.querySelector("#congrats").style.display = "flex";
+    } else {
+      // // Se não for 25 de abril, mostra o countdown e esconde a mensagem + botões
+      countdownContainer.classList.remove("hidden");
+      document.querySelector("#congrats").style.display = "none";
+    }
+
+    // Verifica se a contagem regressiva chegou a zero
+    if (difference < 0) {
+      // Se a contagem regressiva chegou a zero, reinicia a contagem para o próximo ano
+      birthdayDate = new Date(
+        "April 25, " + (new Date().getFullYear() + 1) + " 00:00:00"
+      ).getTime();
+    }
+
+    // Faz o calculo da idade
+
+    //Define o ano de nascimento
+    var birthYear = 2005;
+
+    //Obtem o ano atual
+    var currentYear = currentDate.getFullYear();
+
+    //Calcula a idade atual
+    var age = currentYear - birthYear;
+
+    //Mostra a idade na tela
+    ageContainer.textContent = age + " anos";
+  }, 1000);
+}
+
+// Inicia a contagem regressiva quando a página for carregada
+window.onload = function () {
+  countdown();
 };
 
-setInterval(updateCountdown, 1000);
+function btnPress() {
+  alert("Ops. Se esforce mais! 😛");
+}
+
+function blueBtnPress() {
+  document.querySelector("#congrats").style.display = "none";
+  document.querySelector("#moon").style.display = "none";
+  document.querySelector("#rocket").style.display = "flex";
+}

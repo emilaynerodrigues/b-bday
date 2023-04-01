@@ -9,7 +9,7 @@
   color: #d6c9c9;
 }
 
-body{
+body {
   overflow: hidden;
 }
 
@@ -243,7 +243,8 @@ body{
 /* universe ends */
 
 /* countdown starts */
-.countdown {
+.countdown,
+.congrats {
   width: 35rem;
   height: 15rem;
   background-color: #dbdbdb15;
@@ -291,11 +292,105 @@ body{
 
 .tag-countdown {
   margin-top: 0.7rem;
-  font-size: .8rem;
+  font-size: 0.8rem;
   text-align: center;
   text-transform: uppercase;
 }
 /* countdown ends */
+
+/* congrats starts */
+.congrats .tag {
+  font-size: 2.35rem;
+}
+
+.congrats p {
+  margin-top: 1rem;
+  font-size: 0.8rem;
+  color: #c0c0c09a;
+  text-align: center;
+}
+
+.btn-container {
+  margin-top: 1.5rem;
+  display: flex;
+  gap: 0.8rem;
+}
+
+.btn {
+  width: 2.5rem;
+  height: 2.5rem;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0px 4px 5px rgba(182, 167, 167, 0.158);
+  cursor: pointer;
+}
+
+.btn:nth-child(1) {
+  background-color: #af342f;
+}
+
+.btn:nth-child(2) {
+  background-color: #f5da69;
+}
+
+.btn:nth-child(3) {
+  background-color: #4d5ba4;
+}
+
+.btn:nth-child(4) {
+  background-color: #7aaf53;
+}
+/* congrats ends */
+
+/* rocket starts*/
+.rocket img {
+  height: 15rem;
+}
+
+.rocket {
+  display: none;
+  position: absolute;
+  left: 40%;
+  bottom: -50%;
+  transform: translate(-50%, -50%);
+  animation: travelUp 10s linear infinite, travelDown 9s linear infinite;
+}
+
+@keyframes travelUp {
+  0% {
+    left: 30%;
+    transform: rotate(2deg);
+    bottom: -50%;
+  }
+  20% {
+    transform: rotate(-2deg);
+    left: 50%;
+  }
+  40% {
+    transform: rotate(2deg);
+    left: 30%;
+  }
+  60% {
+    transform: rotate(-2deg);
+    left: 50%;
+  }
+  80% {
+    transform: rotate(2deg);
+    left: 30%;
+  }
+  100% {
+    left: 50%;
+    transform: rotate(-2deg);
+
+    bottom: 100%;
+  }
+}
+
+/* rocket ends*/
+
+.hidden, .congrats {
+  display: none;
+}
 
 @media screen and (max-width: 400px) {
   .moon {
@@ -318,7 +413,8 @@ body{
       transform: rotate(0);
     }
   }
-  .countdown {
+  .countdown,
+  .congrats {
     width: 21rem;
     height: 17rem;
     transform: translate(-50%, -33%);
