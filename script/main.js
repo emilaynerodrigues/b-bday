@@ -38,11 +38,13 @@ function countdown() {
     var currentDate = new Date();
     if (currentDate.getMonth() == 3 && currentDate.getDate() == 2) {
       // Se for 25 de abril, esconde o countdown e exibe a mensagem + botões
-      countdownContainer.classList.add("hidden");
-      document.querySelector("#congrats").style.display = "flex";
+      // countdownContainer.classList.add("hidden");
+      document.querySelector("#countdown").style.display = "none";
+      document.querySelector("#congrats").style.display = "flex"; //testando
     } else {
       // // Se não for 25 de abril, mostra o countdown e esconde a mensagem + botões
-      countdownContainer.classList.remove("hidden");
+      // countdownContainer.classList.remove("hidden");
+      document.querySelector("#countdown").style.display = "flex";
       document.querySelector("#congrats").style.display = "none";
     }
 
@@ -81,6 +83,9 @@ function btnPress() {
 
 function blueBtnPress() {
   document.querySelector("#congrats").style.display = "none";
+  document.querySelector("#congrats").style.visibility = "hidden";
   document.querySelector("#moon").style.display = "none";
   document.querySelector("#rocket").style.display = "flex";
+  document.querySelector("#shooting-stars").style.display = "flex";
+
 }
