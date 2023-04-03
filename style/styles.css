@@ -334,7 +334,7 @@ body {
   left: 8%;
 }
 
-.shooting-stars{
+.shooting-stars {
   display: none;
 }
 
@@ -441,31 +441,205 @@ body {
 
 .moon {
   /* display: none; */
+  width: 10rem;
   position: absolute;
-  top: -5%;
+  top: 5%;
+  left: 15%;
+  transition: 5s all;
+}
+
+.moon-transition {
+  left: -160%;
+  animation: outLeft 8s linear;
+  transition: 10s all;
+}
+
+@keyframes outLeft {
+  0% {
+    transform: rotate(0deg) translateX(0);
+    opacity: 1;
+  }
+  30% {
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(-300deg) translateX(-1000px);
+    opacity: 0;
+  }
+}
+
+.moon img {
+  width: 100%;
   animation: leftRight 8s linear infinite;
 }
 
 @keyframes leftRight {
   0% {
-    right: 60%;
     transform: rotate(0);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  100% {
+    transform: rotate(0);
+  }
+}
+
+.moon-floor {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  bottom: -50%;
+  transform: translate(-50%);
+  animation: upMoon 2s linear;
+}
+
+@keyframes upMoon {
+  0% {
+    bottom: -100%;
+  }
+  100% {
+    bottom: -50%;
+  }
+}
+
+.moon-floor img {
+  width: 40rem;
+  animation: rotate 10s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* walking girl starts*/
+
+.walking-girl {
+  position: absolute;
+  height: 12rem;
+  bottom: 20%;
+  left: 50%;
+  transform: translate(-50%);
+  animation: upMoon 2s linear;
+}
+
+
+.body {
+  width: 7rem;
+  position: absolute;
+  /* left: 50%; */
+  transform: translate(-50%);
+  bottom: 21%;
+  z-index: 30;
+  animation: upDownBody 3s infinite;
+}
+
+@keyframes upDownBody {
+  0% {
+    bottom: 23%;
+  }
+  50% {
+    bottom: 21%;
+  }
+  100% {
+    bottom: 23%;
+  }
+}
+
+.arm {
+  width: 1.8rem;
+  position: absolute;
+  z-index: 10;
+  left: -15px;
+  bottom: 62px;
+  transform: rotate(30deg);
+  z-index: 40;
+  animation: walk 3s linear infinite;
+}
+
+.head {
+  width: 10rem;
+  position: absolute;
+  z-index: 10;
+  transform: translate(-57%);
+  /* bottom: 45%; */
+  z-index: 50;
+  animation: upDownHead 3s infinite;
+}
+
+@keyframes upDownHead {
+  0% {
+    bottom: 47%;
+  }
+  50% {
+    bottom: 44.5%;
+  }
+  100% {
+    bottom: 47%;
+  }
+}
+
+.left-leg {
+  width: 2rem;
+  position: absolute;
+  left: -15px;
+  bottom: 5px;
+  transform-origin: top;
+  transform: rotate(30deg);
+  animation: walk 3s infinite;
+}
+
+.right-leg {
+  width: 2rem;
+  position: absolute;
+  z-index: 15;
+  bottom: 5px;
+  transform-origin: top;
+  transform: rotate(-30deg);
+  animation: walkRight 3s infinite;
+}
+
+@keyframes walk {
+  0% {
+    transform: rotate(30deg);
+  }
+  /* 50% {
+    transform: rotate(0deg);
+  } */
+  50% {
+    transform: rotate(-30deg);
+  }
+  100% {
+    transform: rotate(30deg);
+  }
+}
+
+@keyframes walkRight {
+  0% {
+    transform: rotate(-30deg);
   }
 
   50% {
-    right: 50%;
-    transform: rotate(10deg);
-    top: -15%;
+    transform: rotate(30deg);
   }
   100% {
-    right: 60%;
-    transform: rotate(0);
+    transform: rotate(-30deg);
   }
 }
 
-.moon img {
-  width: 40rem;
+.shadow-line {
+  height: 1rem;
+  width: 8rem;
+  background: #7270702c;
+  border-radius: 1rem;
+  position: absolute;
+  bottom: -1px;
+  left: -50px;
 }
+
+/* walking girl ends*/
 
 /* universe ends */
 
@@ -569,52 +743,6 @@ body {
 }
 /* congrats ends */
 
-/* rocket starts*/
-.rocket img {
-  height: 15rem;
-}
-
-.rocket {
-  display: none;
-  position: absolute;
-  left: 40%;
-  bottom: -50%;
-  transform: translate(-50%, -50%);
-  animation: travelUp 10s linear infinite, travelDown 9s linear infinite;
-}
-
-@keyframes travelUp {
-  0% {
-    left: 30%;
-    transform: rotate(2deg);
-    bottom: -50%;
-  }
-  20% {
-    transform: rotate(-2deg);
-    left: 50%;
-  }
-  40% {
-    transform: rotate(2deg);
-    left: 30%;
-  }
-  60% {
-    transform: rotate(-2deg);
-    left: 50%;
-  }
-  80% {
-    transform: rotate(2deg);
-    left: 30%;
-  }
-  100% {
-    left: 50%;
-    transform: rotate(-2deg);
-
-    bottom: 100%;
-  }
-}
-
-/* rocket ends*/
-
 .countdown,
 .congrats {
   display: none;
@@ -622,25 +750,48 @@ body {
 
 @media screen and (max-width: 400px) {
   .moon {
-    top: -2%;
-    right: 50%;
+    width: 8rem;
+    top: 15%;
+    left: 10%;
   }
+
   @keyframes leftRight {
     0% {
-      right: 52%;
+      left: 10%;
       transform: rotate(0);
     }
 
     50% {
-      right: 48%;
-      transform: rotate(20deg);
-      top: -15%;
+      left: 25%;
+      transform: rotate(60deg);
+      top: 15%;
     }
     100% {
-      right: 52%;
+      left: 10%;
       transform: rotate(0);
     }
   }
+
+  .moon-transition {
+    left: -500%;
+    animation: outLeft 8s linear;
+    transition: 10s all;
+  }
+
+  @keyframes outLeft {
+    0% {
+      transform: rotate(0deg) translateX(0);
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+    100% {
+      transform: rotate(-300deg) translateX(-1000px);
+      opacity: 0;
+    }
+  }
+
   .countdown,
   .congrats {
     width: 21rem;

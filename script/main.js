@@ -5,6 +5,7 @@ var daysContainer = document.querySelector("#day");
 var ageContainer = document.querySelector("#age");
 var countdownContainer = document.querySelector("#countdown");
 var congratsContainer = document.querySelector("#congrats");
+var moonContainer = document.querySelector("#moon");
 
 function countdown() {
   // Define a data de destino (25 de abril)
@@ -40,7 +41,7 @@ function countdown() {
       // Se for 25 de abril, esconde o countdown e exibe a mensagem + botões
       // countdownContainer.classList.add("hidden");
       document.querySelector("#countdown").style.display = "none";
-      document.querySelector("#congrats").style.display = "flex"; //testando
+      document.querySelector("#congrats").style.display = "none"; //testando
     } else {
       // // Se não for 25 de abril, mostra o countdown e esconde a mensagem + botões
       // countdownContainer.classList.remove("hidden");
@@ -84,8 +85,10 @@ function btnPress() {
 function blueBtnPress() {
   document.querySelector("#congrats").style.display = "none";
   document.querySelector("#congrats").style.visibility = "hidden";
-  document.querySelector("#moon").style.display = "none";
-  document.querySelector("#rocket").style.display = "flex";
+  // document.querySelector("#moon").style.display = "none";
+  // document.querySelector("#rocket").style.display = "flex";
   document.querySelector("#shooting-stars").style.display = "flex";
-
+  document.querySelector("#moon-floor").style.display = "flex";
+  moonContainer.classList.add("moon-transition");
+  
 }
