@@ -334,7 +334,7 @@ body {
   left: 8%;
 }
 
-.effects{
+.effects {
   display: none;
 }
 
@@ -455,7 +455,7 @@ body {
 
 .moon-transition {
   left: -160%;
-  animation: outLeft 8s linear;
+  animation: outLeft 2s linear;
   transition: 10s all;
 }
 
@@ -480,13 +480,13 @@ body {
 
 @keyframes leftRight {
   0% {
-    transform: rotate(0);
+    transform: rotate(-10deg);
   }
   50% {
     transform: rotate(30deg);
   }
   100% {
-    transform: rotate(0);
+    transform: rotate(-10deg);
   }
 }
 
@@ -497,7 +497,7 @@ body {
   bottom: -50%;
   transform: translate(-50%);
   animation-name: upMoon;
-  animation-duration: 2s;
+  animation-duration: 5s;
   animation-timing-function: linear;
 }
 
@@ -529,8 +529,8 @@ body {
   left: 50%;
   bottom: 20%;
   transform: translate(-50%);
-  animation: upGirl 4s linear;
-  animation-delay: -2s;
+  animation: upGirl 7s linear;
+  animation-delay: -1.5s;
 }
 
 @keyframes upGirl {
@@ -719,6 +719,8 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* opacity: 1; */
+  transition: 1s all;
 }
 
 .tag {
@@ -814,23 +816,6 @@ body {
     width: 8rem;
     top: 15%;
     left: 10%;
-  }
-
-  @keyframes leftRight {
-    0% {
-      left: 10%;
-      transform: rotate(0);
-    }
-
-    50% {
-      left: 25%;
-      transform: rotate(60deg);
-      top: 15%;
-    }
-    100% {
-      left: 10%;
-      transform: rotate(0);
-    }
   }
 
   .moon-transition {

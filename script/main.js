@@ -10,7 +10,7 @@ var moonContainer = document.querySelector("#moon");
 function countdown() {
   // Define a data de destino (25 de abril)
   var birthdayDate = new Date(
-    "April 2, " + new Date().getFullYear() + " 00:00:00"
+    "April 25, " + new Date().getFullYear() + " 00:00:00"
   ).getTime();
 
   // Atualiza a contagem regressiva a cada segundo
@@ -37,11 +37,11 @@ function countdown() {
 
     // Verifica se a data atual é 25 de abril
     var currentDate = new Date();
-    if (currentDate.getMonth() == 3 && currentDate.getDate() == 2) {
+    if (currentDate.getMonth() == 3 && currentDate.getDate() == 25) {
       // Se for 25 de abril, esconde o countdown e exibe a mensagem + botões
       // countdownContainer.classList.add("hidden");
       document.querySelector("#countdown").style.display = "none";
-      document.querySelector("#congrats").style.display = "flex"; //testando
+      document.querySelector("#congrats").style.display = "flex"; 
     } else {
       // // Se não for 25 de abril, mostra o countdown e esconde a mensagem + botões
       // countdownContainer.classList.remove("hidden");
@@ -85,7 +85,6 @@ function btnPress() {
 function blueBtnPress() {
   document.querySelector("#congrats").style.display = "none";
   document.querySelector("#congrats").style.visibility = "hidden";
-  document.querySelector("#moon").style.display = "none";
   document.querySelector("#effects").style.display = "flex";
   document.querySelector("#shooting-stars").style.display = "flex";
   document.querySelector("#moon-floor").style.display = "flex";
