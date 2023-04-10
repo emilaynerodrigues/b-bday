@@ -499,6 +499,7 @@ body {
   animation-name: upMoon;
   animation-duration: 5s;
   animation-timing-function: linear;
+  animation-delay: .5s;
 }
 
 @keyframes upMoon {
@@ -512,7 +513,7 @@ body {
 
 .moon-floor img {
   width: 40rem;
-  animation: rotate 10s linear infinite;
+  animation: rotate 12s linear infinite;
 }
 
 @keyframes rotate {
