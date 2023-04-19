@@ -10,7 +10,7 @@ var moonContainer = document.querySelector("#moon");
 function countdown() {
   // Define a data de destino (25 de abril)
   var birthdayDate = new Date(
-    "April 25, " + new Date().getFullYear() + " 00:00:00"
+    "April 19, " + new Date().getFullYear() + " 00:00:00"
   ).getTime();
 
   // Atualiza a contagem regressiva a cada segundo
@@ -37,7 +37,7 @@ function countdown() {
 
     // Verifica se a data atual é 25 de abril
     var currentDate = new Date();
-    if (currentDate.getMonth() == 3 && currentDate.getDate() == 25) {
+    if (currentDate.getMonth() == 3 && currentDate.getDate() == 19) {
       // Se for 25 de abril, esconde o countdown e exibe a mensagem + botões
       // countdownContainer.classList.add("hidden");
       document.querySelector("#countdown").style.display = "none";
