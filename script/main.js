@@ -89,5 +89,4 @@ function blueBtnPress() {
   document.querySelector("#shooting-stars").style.display = "flex";
   document.querySelector("#moon-floor").style.display = "flex";
   moonContainer.classList.add("moon-transition");
-  
 }
