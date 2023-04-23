@@ -86,7 +86,6 @@ correctButton.addEventListener("click", function () {
   document.querySelector("#congrats").style.visibility = "hidden";
   document.querySelector("#effects").style.display = "flex";
   moonContainer.classList.add("moon-transition");
-<<<<<<< HEAD
 
   function shootingStars() {
     document.querySelector("#shooting-stars").style.display = "flex";
@@ -101,8 +100,6 @@ for (let i = 0; i < buttons.length; i++) {
       alert("Ops. Se esforce mais! 😛");
     });
   }
-=======
->>>>>>> 079a739f54fbf0b864c402a489ddf97abb1c9c41
 }
 
 // função que mostra os efeitos extras e o card quando o ovni é clicado
