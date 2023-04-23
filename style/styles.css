@@ -1,16 +1,21 @@
 @import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Righteous", cursive;
   letter-spacing: 0.09rem;
-  color: #d6c9c9;
+  color: #ffffff;
 }
 
 body {
   overflow: hidden;
+}
+
+.countdown,
+.congrats {
+  font-family: "Righteous", cursive;
 }
 
 .container {
@@ -338,9 +343,10 @@ body {
   display: none;
 }
 
-/* .shooting-stars {
+.shooting-stars {
   display: none;
-} */
+  transition: 2s all;
+}
 
 .shooting-stars span {
   position: absolute;
@@ -490,57 +496,33 @@ body {
   }
 }
 
-.moon-floor {
-  /* display: none; */
+/* walking girl starts*/
+.up-animation {
   position: absolute;
   left: 50%;
-  bottom: -50%;
+  bottom: 15%;
   transform: translate(-50%);
-  animation-name: upMoon;
-  animation-duration: 5s;
-  animation-timing-function: linear;
-  animation-delay: .5s;
+  animation: upAnimation 7s linear;
+  animation-delay: -1.5s;
+  z-index: 20;
 }
 
-@keyframes upMoon {
+@keyframes upAnimation {
   0% {
     bottom: -100%;
   }
   100% {
-    bottom: -50%;
+    bottom: 15%;
   }
 }
 
-.moon-floor img {
-  width: 40rem;
-  animation: rotate 12s linear infinite;
-}
-
-@keyframes rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-/* walking girl starts*/
-
-.walking-girl {
+.astronaut {
   position: absolute;
   height: 12rem;
   left: 50%;
   bottom: 20%;
   transform: translate(-50%);
-  animation: upGirl 7s linear;
-  animation-delay: -1.5s;
-}
-
-@keyframes upGirl {
-  0% {
-    bottom: -100%;
-  }
-  100% {
-    bottom: 20%;
-  }
+  z-index: 10;
 }
 
 .body {
@@ -581,9 +563,14 @@ body {
   position: absolute;
   z-index: 10;
   transform: translate(-57%);
-  /* bottom: 45%; */
   z-index: 50;
   animation: upDownHead 3s infinite;
+  transition: 0.5s all;
+}
+
+.head-up {
+  transform: translate(-57%) rotate(-20deg);
+  transition: 0.5s all;
 }
 
 @keyframes upDownHead {
@@ -622,9 +609,6 @@ body {
   0% {
     transform: rotate(30deg);
   }
-  /* 50% {
-    transform: rotate(0deg);
-  } */
   50% {
     transform: rotate(-30deg);
   }
@@ -655,21 +639,121 @@ body {
   bottom: -1px;
   left: -50px;
 }
-
 /* walking girl ends*/
-.ballon {
+
+.balloons {
   position: absolute;
-  top: -253px;
-  left: -160px;
-  z-index: 150;
+  bottom: 33rem;
+  right: 9rem;
+  transform: rotate(-15deg);
 }
 
-.earth-ballon {
-  width: 10rem;
+.balloons-up {
+  animation: balloonsUp 4s linear forwards;
+  animation-delay: 1.51s;
+}
+
+@keyframes balloonsUp {
+  100% {
+    transform: translateY(-1000px);
+  }
+}
+
+.balloon .planet {
+  height: 9rem;
+  z-index: 5;
+}
+
+.balloon img {
+  animation: leftRightBallon 4s infinite linear;
+}
+
+.balloons .earth {
   position: absolute;
-  left: -1px;
-  top: -50px;
-  animation: leftRightBallon 3s linear infinite;
+  top: 0rem;
+  left: 50%;
+  transform: translate(-50%);
+}
+
+.balloons .jupiter {
+  position: absolute;
+  top: 3rem;
+  right: 0rem;
+}
+
+.balloons .mars {
+  position: absolute;
+  top: 3rem;
+  left: 0rem;
+}
+
+.balloons .venus {
+  position: absolute;
+  top: 7.5rem;
+  left: -6.5rem;
+}
+
+.balloons .neptune {
+  position: absolute;
+  top: 8rem;
+  right: -6rem;
+}
+
+.balloons .neptune img:nth-child(1) {
+  height: 6.5rem;
+}
+
+.balloons .saturn img:nth-child(1) {
+  height: 7rem;
+}
+
+.balloons .saturn {
+  position: absolute;
+  top: 5.5rem;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 11;
+}
+
+/* linhas dos balões */
+
+.balloon-lines {
+  animation: ballonLine 4s linear infinite;
+}
+
+.balloon-line {
+  position: absolute;
+  height: 18rem;
+}
+
+.balloon-line:nth-child(1) {
+  left: 50%;
+  top: 8rem;
+  z-index: 5;
+}
+
+.balloon-line:nth-child(2) {
+  left: 2rem;
+  top: 8rem;
+  transform: rotate(15deg);
+}
+
+.balloon-line:nth-child(3) {
+  left: 1rem;
+  top: 8rem;
+  transform: rotate(10deg);
+}
+
+.balloon-line:nth-child(4) {
+  right: 0rem;
+  top: 8rem;
+  transform: rotate(-10deg);
+}
+
+.balloon-line:nth-child(5) {
+  right: 1rem;
+  top: 8rem;
+  transform: rotate(-15deg);
 }
 
 @keyframes leftRightBallon {
@@ -684,25 +768,143 @@ body {
   }
 }
 
-.ballon-line {
-  position: absolute;
-  left: 20px;
-  top: -17px;
-  z-index: -1;
-  animation: ballonLine 3s linear infinite;
-}
-
 @keyframes ballonLine {
   0% {
-    transform: rotate(3deg);
+    transform: rotate(-3deg);
   }
   50% {
     transform: rotate(0deg);
   }
   100% {
-    transform: rotate(3deg);
+    transform: rotate(-3deg);
   }
 }
+
+/* lua maior */
+.moon-floor {
+  position: absolute;
+  left: 50%;
+  bottom: -31rem;
+  transform: translate(-50%);
+}
+
+.moon-floor img {
+  width: 40rem;
+  animation: rotate 12s linear infinite;
+}
+
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.ovni-content {
+  position: absolute;
+  top: 5rem;
+  right: -10rem;
+  animation: inRight 2s linear;
+  animation-delay: 5.5s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes inRight {
+  0% {
+    transform: rotate(0deg) translateX(-1000);
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(-5deg) translateX(-500px);
+    opacity: 1;
+  }
+}
+
+.ovni-effect {
+  animation: especialEffect 3s linear !important;
+  animation-delay: 0s;
+}
+
+@keyframes especialEffect {
+  0% {
+    transform: rotate(0deg) translateX(-470px) translateY(3rem);
+    opacity: 1;
+  }
+  60% {
+    transform: rotate(-13deg) translateX(-900px) translateY(4.5rem);
+    opacity: 1;
+  }
+  100% {
+    transform: rotate(2deg) translateX(-1500px);
+    opacity: 1;
+  }
+}
+
+.ovni {
+  cursor: pointer;
+  animation: upDownOvni 6s linear infinite;
+}
+
+.ovni img {
+  height: 5rem;
+  animation: leftRightBallon 3s linear infinite;
+}
+
+@keyframes upDownOvni {
+  0% {
+    top: 5rem;
+  }
+  50% {
+    top: 6rem;
+  }
+  100% {
+    top: 5rem;
+  }
+}
+
+.arrow {
+  position: absolute;
+  top: 2.2rem;
+  right: 20rem;
+  opacity: 0;
+  transform: rotate(190deg);
+  animation: showArrow 2s linear;
+  animation-delay: 7.6s;
+  animation-fill-mode: forwards;
+}
+
+@keyframes showArrow {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.arrow iframe {
+  border: none;
+  height: 3rem;
+}
+
+.card {
+  margin: 12rem;
+  margin-top: 5rem;
+  padding: 2rem;
+  background: #26323898;
+  border-radius: 0.5rem;
+  z-index: 10;
+  font-family: "Roboto Slab", serif;
+  font-size: 0.8rem;
+  display: none;
+}
+
+.card p:nth-child(5) {
+  font-weight: 600;
+}
+
 /* universe ends */
 
 /* countdown starts */
@@ -716,16 +918,13 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 1rem;
-  /* display: flex; */
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  /* opacity: 1; */
   transition: 1s all;
 }
 
 .tag {
-  /* margin-top: 1.5rem; */
   font-size: 1.5rem;
   text-align: center;
   text-transform: uppercase;
@@ -771,17 +970,17 @@ body {
 .congrats p {
   margin-top: 1rem;
   font-size: 0.8rem;
-  color: #c0c0c09a;
+  color: #e9e7e7;
   text-align: center;
 }
 
-.btn-container {
+#button-container {
   margin-top: 1.5rem;
   display: flex;
   gap: 0.8rem;
 }
 
-.btn {
+.button {
   width: 2.5rem;
   height: 2.5rem;
   border: none;
@@ -790,19 +989,19 @@ body {
   cursor: pointer;
 }
 
-.btn:nth-child(1) {
+.button:nth-child(1) {
   background-color: #af342f;
 }
 
-.btn:nth-child(2) {
+.button:nth-child(2) {
   background-color: #f5da69;
 }
 
-.btn:nth-child(3) {
+.button:nth-child(3) {
   background-color: #4d5ba4;
 }
 
-.btn:nth-child(4) {
+.button:nth-child(4) {
   background-color: #7aaf53;
 }
 /* congrats ends */
@@ -854,5 +1053,84 @@ body {
 
   .tag-countdown {
     font-size: 0.7rem;
+  }
+
+  .balloons {
+    position: absolute;
+    bottom: 33rem;
+    right: 7rem;
+    transform: rotate(-10deg);
+  }
+
+  .balloons-up {
+    animation: balloonsUp 3s linear forwards;
+    animation-delay: 2s;
+  }
+
+  .ovni-content {
+    top: 4rem;
+    animation: inRight 2s linear;
+    animation-delay: 5.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes inRight {
+    0% {
+      transform: rotate(0deg) translateX(-1000);
+      opacity: 0;
+    }
+    30% {
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-5deg) translateX(-185px);
+      opacity: 1;
+    }
+  }
+
+  .ovni-effect {
+    animation: especialEffect 3s linear !important;
+    animation-delay: 0s;
+  }
+
+  @keyframes especialEffect {
+    0% {
+      transform: rotate(0deg) translateX(-150px) translateY(1rem);
+      opacity: 1;
+    }
+    60% {
+      transform: rotate(10deg) translateX(-250px) translateY(22rem);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(15deg) translateX(-700px) translateY(15rem);
+      opacity: 1;
+    }
+  }
+
+  .ovni {
+    top: -1rem;
+    right: 2rem;
+  }
+
+  .ovni img {
+    height: 4rem;
+  }
+
+  .arrow {
+    left: 24rem;
+    top: 5rem;
+  }
+
+  .arrow iframe {
+    border: none;
+    height: 2rem;
+  }
+
+  .card {
+    margin: 2rem;
+    margin-top: 3rem;
+    padding: 1.5rem;
+    font-size: 0.78rem;
   }
 }
