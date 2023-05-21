@@ -149,7 +149,7 @@ new TypeIt(".text", {
   .pause(1000)
   .delete(55)
   .type(
-    "O universo esperou por você e recebeu a dádiva de sua presença há exatos 18 anos, mas ele ainda não conhece sua capacidade. Ele ainda está tentando desvendar o mistério por trás da pessoa que você é e irá se tornar. <br><br>Você trouxe luz para o espaço e ilumina a vida daqueles que estão ao seu redor. Voçê traz alegria, inspiração e deixa queixos caídos por onde passa, mas não por simplesmente ter sido contemplada com tanta beleza. <br><br>"
+    "O universo esperou por você e recebeu a dádiva de sua presença há exatos 18 anos, mas ele ainda não conhece sua capacidade. Ele ainda está tentando desvendar o mistério por trás da pessoa que você é e irá se tornar. <br><br>Você trouxe luz para o espaço e ilumina a vida daqueles que estão ao seu redor. Você traz alegria, inspiração e deixa queixos caídos por onde passa, mas não por simplesmente ter sido contemplada com tanta beleza. <br><br>"
   )
   .type(
     "Você é o tipo de pessoa fácil de apaixonar e eu poderia listar diversas das suas melhores qualidades, MAS NÃO TEM MAIS ESPAÇOOOOOOOOOOOOOOOOOOO. Vou ter que apagar esse :("
