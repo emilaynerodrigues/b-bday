@@ -64,6 +64,7 @@ function countdown() {
     //Calcula a idade atual
     var age = currentYear - birthYear;
 
+    //se o mes for maior que 3 (já que a contagem começa do 0)
     if (currentDate.getMonth() >= 3 || currentDate.getDate() > 25) {
       age++;
     } else {
