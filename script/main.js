@@ -52,8 +52,7 @@ function countdown() {
         "April 25, " + (new Date().getFullYear() + 1) + " 00:00:00"
       ).getTime();
     }
-
-    // Faz o calculo da idade
+// Faz o calculo da idade
 
     //Define o ano de nascimento
     var birthYear = 2005;
