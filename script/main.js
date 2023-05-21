@@ -64,6 +64,12 @@ function countdown() {
     //Calcula a idade atual
     var age = currentYear - birthYear;
 
+    if (currentDate.getMonth() >= 3 || currentDate.getDate() > 25) {
+      age++;
+    } else {
+      age;
+    }
+
     //Mostra a idade na tela
     ageContainer.textContent = age + " anos";
   }, 1000);
