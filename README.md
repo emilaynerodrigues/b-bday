@@ -5,7 +5,7 @@ Projeto criado especialmente para Bárbara, garota dona do espaço e do mundo, q
 ## Funcionalidades
 
 - Exibe um contador de dias, horas, minutos e segundos até o dia 25 de abril de cada ano.
-- Mostra durante o dia 25 de abril uma animação e uma mensagem especial.
+- Mostra durante o dia 25 de abril uma animação e uma mensagem especial através de uma função que dispara e libera os efeitos quando o contador atinge o horário e dia programado.
 
 ## Demonstração
 
