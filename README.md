@@ -2,6 +2,8 @@
 
 Projeto criado especialmente para Bárbara, garota dona do espaço e do mundo, que completa ano a cada 25 de abril e ocupa parte do meu coração.
 
+Link de acesso: https://emilaynerodrigues.github.io/b-bday/
+
 ## Funcionalidades
 
 - Exibe um contador de dias, horas, minutos e segundos até o dia 25 de abril de cada ano.
