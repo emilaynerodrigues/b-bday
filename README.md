@@ -1,6 +1,6 @@
 ## Teu espaço
 
-Projeto criado especialmente para Bárbara, garota dona do espaço e do mundo, que completa ano a cada 25 de abril e ocupa parte do meu coração.
+Projeto criado especialmente para Bárbara, garota dona do espaço, que completa ano a cada 25 de abril e ocupa parte do meu coração.
 
 Link de acesso: https://emilaynerodrigues.github.io/b-bday/
 
@@ -17,6 +17,6 @@ Link de acesso: https://emilaynerodrigues.github.io/b-bday/
 ## Tecnologias Utilizadas
 
 - HTML
-- CSS
+- SCSS
 - JavaScript
 - Typeit JS
