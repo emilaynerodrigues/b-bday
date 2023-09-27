@@ -10,13 +10,15 @@ Link de acesso: https://emilaynerodrigues.github.io/b-bday/
 - Mostra durante o dia 25 de abril uma animação e uma mensagem especial através de uma função que dispara e libera os efeitos quando o contador atinge o horário e dia programado.
 - Mostra a idade a ser atingida atualizada após o dia 25 de abril.
 
+## Tecnologias Utilizadas
+
+- **HTML**: Para estruturação e marcação do conteúdo.
+- **SCSS**: Para estilização e apresentação visual do site.
+- **JavaScript**: Para interatividade e dinamismo no carregamento e navegação do conteúdo.
+- **Typeit JS**: Para efeitos de digitação em tempo real.
+  
 ## Demonstração
 
 ![Demonstração](demo.gif)
 
-## Tecnologias Utilizadas
 
-- HTML
-- SCSS
-- JavaScript
-- Typeit JS
