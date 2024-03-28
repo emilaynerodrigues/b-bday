@@ -27,7 +27,7 @@ function countdown() {
     var seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
     // Exibe a contagem regressiva na página
-    secondsContainer.textContent = seconds < 10 ? "0" + seconds : seconds; //se segundos for menor que 10 a função deve acrescentar o 0 na frente, senão continua normal
+    secondsContainer.textContent = seconds < 10 ? "0" + seconds : seconds;
     minutesContainer.textContent = minutes < 10 ? "0" + minutes : minutes;
     hoursContainer.textContent = hours < 10 ? "0" + hours : hours;
     daysContainer.textContent = days < 10 ? "0" + days : days;
@@ -41,17 +41,22 @@ function countdown() {
     }
 
     //------------- Faz o calculo da idade -------------
-    //Define o ano de nascimento
+    // Define o ano de nascimento
     var birthYear = 2005;
+    var birthDate = new Date("April 25, " + birthYear + " 00:00:00");
 
-    //Obtem o ano atual
+    // Obtém o ano atual
     var currentYear = new Date().getFullYear();
 
-    //Calcula a idade atual
+    // Calcula a idade atual
     var age = currentYear - birthYear;
 
-    //se o mes for maior que 3 (já que a contagem começa do 0)
-    if (new Date().getMonth() >= 3 || new Date().getDate() > 25) {
+    // Verifica se o aniversário já ocorreu este ano
+    if (
+      new Date().getMonth() > birthDate.getMonth() ||
+      (new Date().getMonth() === birthDate.getMonth() &&
+        new Date().getDate() >= birthDate.getDate())
+    ) {
       age++;
     }
 
