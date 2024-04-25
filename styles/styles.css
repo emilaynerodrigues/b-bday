@@ -379,7 +379,7 @@
     bottom: -150rem;
   }
   100% {
-    bottom: -80rem;
+    bottom: -82rem;
   }
 }
 @media (max-width: 600px) {
@@ -518,8 +518,9 @@
 }
 #text-a {
   position: absolute;
-  top: -25rem;
-  right: -17.5rem;
+  top: 15rem;
+  left: 50%;
+  transform: translateX(-50%);
   width: 35rem;
   display: none;
 }
