@@ -6,11 +6,16 @@
   font-size: 62.5%;
 }
 
+* {
+  font-family: "Overpass", sans-serif;
+}
+
 .container {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .content-group {
@@ -100,6 +105,7 @@
   width: 10rem;
   position: absolute;
   z-index: 10;
+  transition: 0.3s all;
 }
 
 .small__moon-white::before {
@@ -271,6 +277,111 @@
     transform: scale(1);
   }
 }
+#button-container {
+  display: flex;
+  gap: 1.5rem;
+}
+#button-container .button {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  border: none;
+}
+#button-container #btn-1 {
+  background-color: #deb241;
+}
+#button-container #btn-2 {
+  background-color: #3D4ABE;
+}
+#button-container #btn-3 {
+  background-color: #BF3333;
+}
+#button-container #btn-4 {
+  background-color: #48AF37;
+}
+
+.text,
+.text-element {
+  font-size: 1.6rem;
+  color: #fbf5f5;
+}
+
+.transition {
+  animation: fade 0.5s linear forwards;
+}
+
+@keyframes fade {
+  100% {
+    opacity: 0;
+  }
+}
+#content-3 {
+  position: relative;
+}
+#content-3 #moon-girl {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -150rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: 2s all;
+}
+#content-3 #girl {
+  height: 10rem;
+  width: 8rem;
+  z-index: 10;
+  margin-bottom: -3rem;
+  margin-left: -10rem;
+}
+#content-3 #full {
+  height: 50rem;
+  width: 50rem;
+}
+
+#yellow-star {
+  position: absolute;
+  right: 5rem;
+  height: 9rem;
+  top: 8rem;
+  animation: scaleYellowStar 3s infinite linear;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+}
+
+@keyframes scaleYellowStar {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+#yellow-star img {
+  height: 5rem;
+}
+
+.yellow-transition {
+  opacity: 1;
+}
+
+.fullMoon-transition {
+  animation: moonUp 1.5s linear forwards;
+}
+
+@keyframes moonUp {
+  0% {
+    bottom: -150rem;
+  }
+  100% {
+    bottom: -80rem;
+  }
+}
 @media (max-width: 600px) {
   .hero-text {
     font-size: 2.4rem;
@@ -405,6 +516,14 @@
     animation: scaleStar 5s infinite linear;
   }
 }
+#text-a {
+  position: absolute;
+  top: -25rem;
+  right: -17.5rem;
+  width: 35rem;
+  display: none;
+}
+
 body {
   width: 100%;
   height: 100vh;
